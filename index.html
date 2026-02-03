@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Let Me Google That For You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <div class="brand">
+          <div class="dot blue"></div>
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <span class="brand-text">Search Demo</span>
+        </div>
+
+        <h1>Searching isn’t hard.</h1>
+        <p class="subtitle">Watch how to do it in 3 easy steps.</p>
+
+        <div class="search-shell">
+          <input id="searchInput" type="text" placeholder="Type your question" autocomplete="off" />
+          <button id="searchButton" type="button">Google Search</button>
+        </div>
+
+        <ol class="steps">
+          <li id="step1">Type your question</li>
+          <li id="step2">Click search</li>
+          <li id="step3">Read the results</li>
+        </ol>
+
+        <p class="footnote">
+          You’ll be redirected to Google shortly.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
