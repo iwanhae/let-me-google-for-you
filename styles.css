@@ -1,13 +1,13 @@
 :root {
-  --bg-1: #0f172a;
-  --bg-2: #1e1b4b;
-  --card: rgba(255, 255, 255, 0.08);
-  --card-border: rgba(255, 255, 255, 0.16);
+  --bg-1: #0b0b0f;
+  --bg-2: #210a12;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.12);
   --text: #f8fafc;
-  --muted: #cbd5f5;
-  --accent: #60a5fa;
-  --accent-2: #fbbf24;
-  --shadow: rgba(15, 23, 42, 0.55);
+  --muted: #f1b8b8;
+  --accent: #fb7185;
+  --accent-2: #f97316;
+  --shadow: rgba(5, 5, 7, 0.7);
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
 }
 
@@ -18,8 +18,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top left, #1d4ed8, transparent 45%),
-    radial-gradient(circle at 30% 30%, #7c3aed, transparent 40%),
+  background: radial-gradient(circle at 15% 20%, rgba(255, 40, 40, 0.35), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(255, 150, 50, 0.35), transparent 40%),
     linear-gradient(135deg, var(--bg-1), var(--bg-2));
   color: var(--text);
   display: flex;
@@ -59,16 +59,16 @@ body {
 }
 
 .dot.blue {
-  background: #3b82f6;
+  background: #fb7185;
 }
 .dot.red {
-  background: #ef4444;
+  background: #f43f5e;
 }
 .dot.yellow {
-  background: #f59e0b;
+  background: #f97316;
 }
 .dot.green {
-  background: #10b981;
+  background: #f59e0b;
 }
 
 h1 {
@@ -87,8 +87,8 @@ h1 {
   gap: 16px;
   padding: 18px;
   border-radius: 20px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(13, 12, 18, 0.75);
+  border: 1px solid rgba(251, 113, 133, 0.35);
 }
 
 .search-shell input {
@@ -104,15 +104,15 @@ h1 {
 }
 
 .search-shell button {
-  background: linear-gradient(135deg, var(--accent), #38bdf8);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
   border: none;
-  color: #0f172a;
-  font-weight: 600;
+  color: #140a0c;
+  font-weight: 700;
   padding: 12px 20px;
   border-radius: 14px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 14px 24px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 16px 28px rgba(251, 113, 133, 0.45);
 }
 
 .search-shell button:active {
@@ -128,6 +128,60 @@ h1 {
   color: var(--muted);
 }
 
+.meme-wall {
+  margin: 26px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.meme-tag {
+  font-family: "Comic Sans MS", "Comic Neue", cursive;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+}
+
+.meme-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.meme-card {
+  width: 100%;
+  --tilt: -2deg;
+  border-radius: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45), 0 0 0 6px rgba(251, 113, 133, 0.35);
+  filter: saturate(1.2) contrast(1.05);
+  animation: wobble 2.8s ease-in-out infinite;
+}
+
+.meme-card.tilt-left {
+  --tilt: -2deg;
+}
+
+.meme-card.tilt-right {
+  --tilt: 2deg;
+  animation-delay: 0.4s;
+}
+
+.meme-credit {
+  font-size: 0.75rem;
+  color: rgba(226, 232, 240, 0.7);
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt));
+  }
+  50% {
+    transform: translateY(-6px) rotate(calc(var(--tilt) * -1));
+  }
+}
+
 .steps li {
   display: flex;
   align-items: center;
@@ -141,7 +195,7 @@ h1 {
 
 .steps li.active {
   color: var(--text);
-  border-color: rgba(96, 165, 250, 0.6);
+  border-color: rgba(251, 113, 133, 0.7);
 }
 
 .steps li::before {

@@ -26,12 +26,11 @@ function typeNextChar() {
     typingIndex += 1;
     typingTimer = window.setTimeout(typeNextChar, 70);
   } else {
-    setActiveStep(1);
-    window.setTimeout(() => {
-      button.classList.add("clicked");
-      setActiveStep(2);
-      window.setTimeout(redirectToGoogle, 850);
-    }, 650);
+    const stepDelay = 3000 / 3;
+    button.classList.add("clicked");
+    window.setTimeout(() => setActiveStep(1), stepDelay);
+    window.setTimeout(() => setActiveStep(2), stepDelay * 2);
+    window.setTimeout(redirectToGoogle, 3000);
   }
 }
 
